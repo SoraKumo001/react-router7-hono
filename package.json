@@ -11,8 +11,6 @@
   },
   "dependencies": {
     "@react-router/fs-routes": "^7.0.2",
-    "@react-router/node": "^7.0.2",
-    "@react-router/serve": "^7.0.2",
     "hono": "^4.6.12",
     "isbot": "^5.1.17",
     "react": "^18.3.1",
@@ -24,7 +22,7 @@
     "@hono/vite-dev-server": "^0.17.0",
     "@react-router/dev": "^7.0.2",
     "@types/node": "^22.10.1",
-    "@types/react": "^18.3.12",
+    "@types/react": "^18.3.13",
     "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.20",
     "hono-remix-adapter": "^0.5.3",
