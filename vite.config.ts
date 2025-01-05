@@ -6,13 +6,12 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import adapter from "@hono/vite-dev-server/cloudflare";
 import serverAdapter from "hono-remix-adapter/vite";
 
-export default defineConfig(({ isSsrBuild }) => ({
+export default defineConfig(({ isSsrBuild, mode }) => ({
   build: {
-    rollupOptions: isSsrBuild
-      ? {
-          input: "./workers/app.ts",
-        }
-      : undefined,
+    rollupOptions: {
+      external: [],
+      input: isSsrBuild ? "./workers/app.ts" : undefined,
+    },
   },
   css: {
     postcss: {
@@ -20,6 +19,7 @@ export default defineConfig(({ isSsrBuild }) => ({
     },
   },
   ssr: {
+    noExternal: mode === "production" ? true : undefined,
     resolve: {
       conditions: ["workerd", "worker", "browser"],
       externalConditions: ["workerd", "worker"],

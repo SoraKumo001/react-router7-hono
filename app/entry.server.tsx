@@ -2,6 +2,7 @@ import type { AppLoadContext, EntryContext } from "react-router";
 import { ServerRouter } from "react-router";
 import { isbot } from "isbot";
 import { renderToReadableStream } from "react-dom/server";
+import { ServerProvider } from "remix-provider";
 
 const ABORT_DELAY = 5_000;
 
@@ -16,11 +17,19 @@ export default async function handleRequest(
   const userAgent = request.headers.get("user-agent");
 
   const body = await renderToReadableStream(
-    <ServerRouter
-      context={routerContext}
-      url={request.url}
-      abortDelay={ABORT_DELAY}
-    />,
+    <ServerProvider
+      value={Object.fromEntries(
+        Object.entries(process.env).filter(([key]) =>
+          key.startsWith("REACT_ROUTER_PUBLIC_")
+        )
+      )}
+    >
+      <ServerRouter
+        context={routerContext}
+        url={request.url}
+        abortDelay={ABORT_DELAY}
+      />
+    </ServerProvider>,
     {
       onError(error: unknown) {
         responseStatusCode = 500;

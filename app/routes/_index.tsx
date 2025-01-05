@@ -1,8 +1,15 @@
 import { useLoaderData } from "react-router";
+import { useRootContext } from "remix-provider";
 
 export default function Index() {
   const value = useLoaderData<string>();
-  return <pre>{value}</pre>;
+  const value2 = useRootContext();
+  console.log(value2);
+  return (
+    <div>
+      <pre>{value}</pre>
+    </div>
+  );
 }
 
 // At the point of module execution, process.env is available.

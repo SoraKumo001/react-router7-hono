@@ -9,46 +9,49 @@ dependencies:
     specifier: ^7.0.2
     version: 7.0.2(@react-router/dev@7.0.2)(typescript@5.7.2)
   hono:
-    specifier: ^4.6.12
-    version: 4.6.12
+    specifier: ^4.6.13
+    version: 4.6.13
   isbot:
     specifier: ^5.1.17
     version: 5.1.17
   react:
-    specifier: ^18.3.1
-    version: 18.3.1
+    specifier: ^19.0.0
+    version: 19.0.0
   react-dom:
-    specifier: ^18.3.1
-    version: 18.3.1(react@18.3.1)
+    specifier: ^19.0.0
+    version: 19.0.0(react@19.0.0)
   react-router:
     specifier: ^7.0.2
-    version: 7.0.2(react-dom@18.3.1)(react@18.3.1)
+    version: 7.0.2(react-dom@19.0.0)(react@19.0.0)
+  remix-provider:
+    specifier: ^0.0.2
+    version: 0.0.2
 
 devDependencies:
   '@cloudflare/workers-types':
-    specifier: ^4.20241202.0
-    version: 4.20241202.0
+    specifier: ^4.20241205.0
+    version: 4.20241205.0
   '@hono/vite-dev-server':
     specifier: ^0.17.0
-    version: 0.17.0(hono@4.6.12)(wrangler@3.92.0)
+    version: 0.17.0(hono@4.6.13)(wrangler@3.92.0)
   '@react-router/dev':
     specifier: ^7.0.2
-    version: 7.0.2(@types/node@22.10.1)(react-router@7.0.2)(typescript@5.7.2)(vite@6.0.2)(wrangler@3.92.0)
+    version: 7.0.2(@types/node@22.10.1)(react-router@7.0.2)(typescript@5.7.2)(vite@6.0.3)(wrangler@3.92.0)
   '@types/node':
     specifier: ^22.10.1
     version: 22.10.1
   '@types/react':
-    specifier: ^18.3.13
-    version: 18.3.13
+    specifier: ^19.0.0
+    version: 19.0.0
   '@types/react-dom':
-    specifier: ^18.3.1
-    version: 18.3.1
+    specifier: ^19.0.0
+    version: 19.0.0
   autoprefixer:
     specifier: ^10.4.20
     version: 10.4.20(postcss@8.4.49)
   hono-remix-adapter:
-    specifier: ^0.5.3
-    version: 0.5.3(@cloudflare/workers-types@4.20241202.0)(hono@4.6.12)(typescript@5.7.2)(wrangler@3.92.0)
+    specifier: ^0.5.4
+    version: 0.5.4(@cloudflare/workers-types@4.20241205.0)(hono@4.6.13)(typescript@5.7.2)(wrangler@3.92.0)
   next-exec:
     specifier: ^1.0.0
     version: 1.0.0
@@ -62,14 +65,14 @@ devDependencies:
     specifier: ^5.7.2
     version: 5.7.2
   vite:
-    specifier: ^6.0.2
-    version: 6.0.2(@types/node@22.10.1)
+    specifier: ^6.0.3
+    version: 6.0.3(@types/node@22.10.1)
   vite-tsconfig-paths:
     specifier: ^5.1.3
-    version: 5.1.3(typescript@5.7.2)(vite@6.0.2)
+    version: 5.1.3(typescript@5.7.2)(vite@6.0.3)
   wrangler:
     specifier: ^3.92.0
-    version: 3.92.0(@cloudflare/workers-types@4.20241202.0)
+    version: 3.92.0(@cloudflare/workers-types@4.20241205.0)
 
 packages:
 
@@ -420,8 +423,8 @@ packages:
       mime: 3.0.0
       zod: 3.23.8
 
-  /@cloudflare/workers-types@4.20241202.0:
-    resolution: {integrity: sha512-ts4JD6Wih62SDmlc+OcnN1Db/DgEBcl+BUpJr7ht7pgWP81PCLyPcomgDXIeAqt2NLiOIOMMkYQZ1ZtWDo3/8A==}
+  /@cloudflare/workers-types@4.20241205.0:
+    resolution: {integrity: sha512-pj1VKRHT/ScQbHOIMFODZaNAlJHQHdBSZXNIdr9ebJzwBff9Qz8VdqhbhggV7f+aUEh8WSbrsPIo4a+WtgjUvw==}
 
   /@cspotcode/source-map-support@0.8.1:
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -1001,16 +1004,16 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  /@hono/node-server@1.13.7(hono@4.6.12):
+  /@hono/node-server@1.13.7(hono@4.6.13):
     resolution: {integrity: sha512-kTfUMsoloVKtRA2fLiGSd9qBddmru9KadNyhJCwgKBxTiNkaAJEwkVN9KV/rS4HtmmNRtUh6P+YpmjRMl0d9vQ==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: ^4
     dependencies:
-      hono: 4.6.12
+      hono: 4.6.13
     dev: true
 
-  /@hono/vite-dev-server@0.17.0(hono@4.6.12)(wrangler@3.92.0):
+  /@hono/vite-dev-server@0.17.0(hono@4.6.13)(wrangler@3.92.0):
     resolution: {integrity: sha512-EvGOIj1MoY9uV94onXXz88yWaTxzUK+Mv8LiIEsR/9eSFoVUnHVR0B7l7iNIsxfHYRN7tbPDMWBSnD2RQun3yw==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -1023,10 +1026,10 @@ packages:
       wrangler:
         optional: true
     dependencies:
-      '@hono/node-server': 1.13.7(hono@4.6.12)
-      hono: 4.6.12
+      '@hono/node-server': 1.13.7(hono@4.6.13)
+      hono: 4.6.13
       minimatch: 9.0.5
-      wrangler: 3.92.0(@cloudflare/workers-types@4.20241202.0)
+      wrangler: 3.92.0(@cloudflare/workers-types@4.20241205.0)
     dev: true
 
   /@isaacs/cliui@8.0.2:
@@ -1136,7 +1139,7 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@react-router/dev@7.0.2(@types/node@22.10.1)(react-router@7.0.2)(typescript@5.7.2)(vite@6.0.2)(wrangler@3.92.0):
+  /@react-router/dev@7.0.2(@types/node@22.10.1)(react-router@7.0.2)(typescript@5.7.2)(vite@6.0.3)(wrangler@3.92.0):
     resolution: {integrity: sha512-uT9OVTGJAtOHGSvAlES4Y2HLqLQ7pENffUhlS7Is7eEVWQeTfZei/1RXTnNwpLbwAuDEf7DHbINDeVLDdjP92w==}
     engines: {node: '>=20.0.0'}
     hasBin: true
@@ -1179,14 +1182,14 @@ packages:
       picomatch: 2.3.1
       prettier: 2.8.8
       react-refresh: 0.14.2
-      react-router: 7.0.2(react-dom@18.3.1)(react@18.3.1)
+      react-router: 7.0.2(react-dom@19.0.0)(react@19.0.0)
       semver: 7.6.3
       set-cookie-parser: 2.7.1
       typescript: 5.7.2
       valibot: 0.41.0(typescript@5.7.2)
-      vite: 6.0.2(@types/node@22.10.1)
+      vite: 6.0.3(@types/node@22.10.1)
       vite-node: 1.6.0(@types/node@22.10.1)
-      wrangler: 3.92.0(@cloudflare/workers-types@4.20241202.0)
+      wrangler: 3.92.0(@cloudflare/workers-types@4.20241205.0)
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -1210,7 +1213,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@react-router/dev': 7.0.2(@types/node@22.10.1)(react-router@7.0.2)(typescript@5.7.2)(vite@6.0.2)(wrangler@3.92.0)
+      '@react-router/dev': 7.0.2(@types/node@22.10.1)(react-router@7.0.2)(typescript@5.7.2)(vite@6.0.3)(wrangler@3.92.0)
       minimatch: 9.0.5
       typescript: 5.7.2
     dev: false
@@ -1226,13 +1229,13 @@ packages:
         optional: true
     dependencies:
       '@mjackson/node-fetch-server': 0.2.0
-      react-router: 7.0.2(react-dom@18.3.1)(react@18.3.1)
+      react-router: 7.0.2(react-dom@19.0.0)(react@19.0.0)
       source-map-support: 0.5.21
       stream-slice: 0.1.2
       typescript: 5.7.2
       undici: 6.21.0
 
-  /@remix-run/cloudflare@2.15.0(@cloudflare/workers-types@4.20241202.0)(typescript@5.7.2):
+  /@remix-run/cloudflare@2.15.0(@cloudflare/workers-types@4.20241205.0)(typescript@5.7.2):
     resolution: {integrity: sha512-X8Z3EDdlh/8Gjpu27gnJenN06Q9BtkxMEFt5op3y/qahCt0FH9A64DZQ5N47+WnFhySy6mOpzFwCAzPmGIuIeQ==}
     engines: {node: '>=18.0.0'}
     requiresBuild: true
@@ -1244,7 +1247,7 @@ packages:
         optional: true
     dependencies:
       '@cloudflare/kv-asset-handler': 0.1.3
-      '@cloudflare/workers-types': 4.20241202.0
+      '@cloudflare/workers-types': 4.20241205.0
       '@remix-run/server-runtime': 2.15.0(typescript@5.7.2)
       typescript: 5.7.2
     dev: true
@@ -1486,20 +1489,15 @@ packages:
     dependencies:
       undici-types: 6.20.0
 
-  /@types/prop-types@15.7.13:
-    resolution: {integrity: sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==}
+  /@types/react-dom@19.0.0:
+    resolution: {integrity: sha512-1KfiQKsH1o00p9m5ag12axHQSb3FOU9H20UTrujVSkNhuCrRHiQWFqgEnTNK5ZNfnzZv8UWrnXVqCmCF9fgY3w==}
+    dependencies:
+      '@types/react': 19.0.0
     dev: true
 
-  /@types/react-dom@18.3.1:
-    resolution: {integrity: sha512-qW1Mfv8taImTthu4KoXgDfLuk4bydU6Q/TkADnDWWHwi4NX4BR+LWfTp2sVmTqRrsHvyDDTelgelxJ+SsejKKQ==}
+  /@types/react@19.0.0:
+    resolution: {integrity: sha512-MY3oPudxvMYyesqs/kW1Bh8y9VqSmf+tzqw3ae8a9DZW68pUe3zAdHeI1jc6iAysuRdACnVknHP8AhwD4/dxtg==}
     dependencies:
-      '@types/react': 18.3.13
-    dev: true
-
-  /@types/react@18.3.13:
-    resolution: {integrity: sha512-ii/gswMmOievxAJed4PAHT949bpYjPKXvXo1v6cRB/kqc2ZR4n+SgyCyvyc5Fec5ez8VnUumI1Vk7j6fRyRogg==}
-    dependencies:
-      '@types/prop-types': 15.7.13
       csstype: 3.1.3
     dev: true
 
@@ -2164,18 +2162,18 @@ packages:
     dependencies:
       function-bind: 1.1.2
 
-  /hono-remix-adapter@0.5.3(@cloudflare/workers-types@4.20241202.0)(hono@4.6.12)(typescript@5.7.2)(wrangler@3.92.0):
-    resolution: {integrity: sha512-nZYe9TTbrKWUJ1shuroo5UikYvyzbcMWbzPbgLZzOZCQQAtRvlBPtrVtW5eJSGOI1JtmsR/9uEyThi9P1aniqw==}
+  /hono-remix-adapter@0.5.4(@cloudflare/workers-types@4.20241205.0)(hono@4.6.13)(typescript@5.7.2)(wrangler@3.92.0):
+    resolution: {integrity: sha512-jYK/UJUY/XlYL8Xva0ObR6++A+ke1KPgJEDZ2i1LC22bPR2WPbeYflDlnzu+pzJT0HMlHQfp1qvQew1y5+GXDQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       hono: '*'
     dependencies:
-      '@hono/vite-dev-server': 0.17.0(hono@4.6.12)(wrangler@3.92.0)
+      '@hono/vite-dev-server': 0.17.0(hono@4.6.13)(wrangler@3.92.0)
       '@remix-run/server-runtime': 2.15.0(typescript@5.7.2)
-      hono: 4.6.12
+      hono: 4.6.13
     optionalDependencies:
-      '@hono/node-server': 1.13.7(hono@4.6.12)
-      '@remix-run/cloudflare': 2.15.0(@cloudflare/workers-types@4.20241202.0)(typescript@5.7.2)
+      '@hono/node-server': 1.13.7(hono@4.6.13)
+      '@remix-run/cloudflare': 2.15.0(@cloudflare/workers-types@4.20241205.0)(typescript@5.7.2)
       '@remix-run/node': 2.15.0(typescript@5.7.2)
     transitivePeerDependencies:
       - '@cloudflare/workers-types'
@@ -2184,8 +2182,8 @@ packages:
       - wrangler
     dev: true
 
-  /hono@4.6.12:
-    resolution: {integrity: sha512-eHtf4kSDNw6VVrdbd5IQi16r22m3s7mWPLd7xOMhg1a/Yyb1A0qpUFq8xYMX4FMuDe1nTKeMX5rTx7Nmw+a+Ag==}
+  /hono@4.6.13:
+    resolution: {integrity: sha512-haV0gaMdSjy9URCRN9hxBPlqHa7fMm/T72kAImIxvw4eQLbNz1rgjN4hHElLJSieDiNuiIAXC//cC6YGz2KCbg==}
     engines: {node: '>=16.9.0'}
 
   /hosted-git-info@6.1.3:
@@ -2334,12 +2332,6 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-
-  /loose-envify@1.4.0:
-    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
-    hasBin: true
-    dependencies:
-      js-tokens: 4.0.0
 
   /lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
@@ -2702,20 +2694,19 @@ packages:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
     dev: true
 
-  /react-dom@18.3.1(react@18.3.1):
-    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
+  /react-dom@19.0.0(react@19.0.0):
+    resolution: {integrity: sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ==}
     peerDependencies:
-      react: ^18.3.1
+      react: ^19.0.0
     dependencies:
-      loose-envify: 1.4.0
-      react: 18.3.1
-      scheduler: 0.23.2
+      react: 19.0.0
+      scheduler: 0.25.0
 
   /react-refresh@0.14.2:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
     engines: {node: '>=0.10.0'}
 
-  /react-router@7.0.2(react-dom@18.3.1)(react@18.3.1):
+  /react-router@7.0.2(react-dom@19.0.0)(react@19.0.0):
     resolution: {integrity: sha512-m5AcPfTRUcjwmhBzOJGEl6Y7+Crqyju0+TgTQxoS4SO+BkWbhOrcfZNq6wSWdl2BBbJbsAoBUb8ZacOFT+/JlA==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
@@ -2727,16 +2718,14 @@ packages:
     dependencies:
       '@types/cookie': 0.6.0
       cookie: 1.0.2
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
       set-cookie-parser: 2.7.1
       turbo-stream: 2.4.0
 
-  /react@18.3.1:
-    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
+  /react@19.0.0:
+    resolution: {integrity: sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==}
     engines: {node: '>=0.10.0'}
-    dependencies:
-      loose-envify: 1.4.0
 
   /read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
@@ -2765,6 +2754,10 @@ packages:
   /readdirp@4.0.2:
     resolution: {integrity: sha512-yDMz9g+VaZkqBYS/ozoBJwaBhTbZo3UNYQHNRw1D3UFQB8oHB4uS/tAODO+ZLjGWmUbKnIlOWO+aaIiAxrUWHA==}
     engines: {node: '>= 14.16.0'}
+
+  /remix-provider@0.0.2:
+    resolution: {integrity: sha512-DMuNk1l5Z6H5CyKRMiiSpNW36vXNNet4u2JmWmc56bNTm62zsyvGdM1p/MvhgXY49RJnf7/GzmSXUyCLX/wcNg==}
+    dev: false
 
   /resolve@1.22.8:
     resolution: {integrity: sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw==}
@@ -2837,10 +2830,8 @@ packages:
   /safe-buffer@5.1.2:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
 
-  /scheduler@0.23.2:
-    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
-    dependencies:
-      loose-envify: 1.4.0
+  /scheduler@0.25.0:
+    resolution: {integrity: sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA==}
 
   /selfsigned@2.4.1:
     resolution: {integrity: sha512-th5B4L2U+eGLq1TVh7zNRGBapioSORUeymIydxgFpwww9d2qyKvtuPU2jJuHvYAwwqi2Y596QBL3eEqcPEYL8Q==}
@@ -3176,7 +3167,7 @@ packages:
       - supports-color
       - terser
 
-  /vite-tsconfig-paths@5.1.3(typescript@5.7.2)(vite@6.0.2):
+  /vite-tsconfig-paths@5.1.3(typescript@5.7.2)(vite@6.0.3):
     resolution: {integrity: sha512-0bz+PDlLpGfP2CigeSKL9NFTF1KtXkeHGZSSaGQSuPZH77GhoiQaA8IjYgOaynSuwlDTolSUEU0ErVvju3NURg==}
     peerDependencies:
       vite: '*'
@@ -3187,7 +3178,7 @@ packages:
       debug: 4.3.7
       globrex: 0.1.2
       tsconfck: 3.1.4(typescript@5.7.2)
-      vite: 6.0.2(@types/node@22.10.1)
+      vite: 6.0.3(@types/node@22.10.1)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -3231,8 +3222,8 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
 
-  /vite@6.0.2(@types/node@22.10.1):
-    resolution: {integrity: sha512-XdQ+VsY2tJpBsKGs0wf3U/+azx8BBpYRHFAyKm5VeEZNOJZRB63q7Sc8Iup3k0TrN3KO6QgyzFf+opSbfY1y0g==}
+  /vite@6.0.3(@types/node@22.10.1):
+    resolution: {integrity: sha512-Cmuo5P0ENTN6HxLSo6IHsjCLn/81Vgrp81oaiFFMRa8gGDj5xEjIcEpf2ZymZtZR8oU0P2JX5WuUp/rlXcHkAw==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
@@ -3334,7 +3325,7 @@ packages:
       '@cloudflare/workerd-linux-arm64': 1.20241106.2
       '@cloudflare/workerd-windows-64': 1.20241106.2
 
-  /wrangler@3.92.0(@cloudflare/workers-types@4.20241202.0):
+  /wrangler@3.92.0(@cloudflare/workers-types@4.20241205.0):
     resolution: {integrity: sha512-MC+s+stSYQKXEn7ucENhzrw+RyMc5bSIRQ2EVcjCtqjAtO82uKQBatW2YXK5hkQOZg9Kfcdqgkcnpf/Bn94FiA==}
     engines: {node: '>=16.17.0'}
     hasBin: true
@@ -3346,7 +3337,7 @@ packages:
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@cloudflare/workers-shared': 0.9.1
-      '@cloudflare/workers-types': 4.20241202.0
+      '@cloudflare/workers-types': 4.20241205.0
       '@esbuild-plugins/node-globals-polyfill': 0.2.3(esbuild@0.17.19)
       '@esbuild-plugins/node-modules-polyfill': 0.2.2(esbuild@0.17.19)
       blake3-wasm: 2.1.5
