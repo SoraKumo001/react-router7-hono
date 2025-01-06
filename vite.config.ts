@@ -6,7 +6,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import adapter from "@hono/vite-dev-server/cloudflare";
 import serverAdapter from "hono-react-router-adapter/vite";
 
-export default defineConfig(({ isSsrBuild, mode }) => ({
+export default defineConfig(({ isSsrBuild }) => ({
   build: {
     rollupOptions: {
       external: [],
@@ -19,7 +19,6 @@ export default defineConfig(({ isSsrBuild, mode }) => ({
     },
   },
   ssr: {
-    noExternal: mode === "production" ? true : undefined,
     resolve: {
       conditions: ["workerd", "worker", "browser"],
       externalConditions: ["workerd", "worker"],
