@@ -3,13 +3,12 @@ import { contextStorage, getContext } from "hono/context-storage";
 import { createRequestHandler } from "react-router";
 
 const app = new Hono();
-
 app.use(contextStorage());
 
 app.use(async (_c, next) => {
-  if (!Object.getOwnPropertyDescriptor(process, "env")?.get) {
-    const processEnv = process.env;
-    Object.defineProperty(process, "env", {
+  if (!Object.getOwnPropertyDescriptor(globalThis.process, "env")?.get) {
+    const processEnv = globalThis.process.env;
+    Object.defineProperty(globalThis.process, "env", {
       get() {
         try {
           return { ...processEnv, ...getContext().env };

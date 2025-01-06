@@ -2,12 +2,15 @@ import { useLoaderData } from "react-router";
 import { useRootContext } from "remix-provider";
 
 export default function Index() {
-  const value = useLoaderData<string>();
-  const value2 = useRootContext();
-  console.log(value2);
+  const server = useLoaderData<string>();
+  const client = useRootContext();
   return (
     <div>
-      <pre>{value}</pre>
+      <div>Client:</div>
+      <pre>{JSON.stringify(client, null, 2)}</pre>
+      <hr />
+      <div>Server:</div>
+      <pre>{server}</pre>
     </div>
   );
 }
@@ -15,6 +18,6 @@ export default function Index() {
 // At the point of module execution, process.env is available.
 
 export const loader = () => {
-  const value = JSON.stringify(process.env.TEST, null, 2);
+  const value = JSON.stringify(process.env, null, 2);
   return value;
 };

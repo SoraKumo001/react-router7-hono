@@ -27,7 +27,10 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <RootProvider>
+    <RootProvider
+      //Using process.env on the client
+      process={true}
+    >
       <html lang="en">
         <head>
           <meta charSet="utf-8" />

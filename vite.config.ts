@@ -4,7 +4,7 @@ import tailwindcss from "tailwindcss";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import adapter from "@hono/vite-dev-server/cloudflare";
-import serverAdapter from "hono-remix-adapter/vite";
+import serverAdapter from "hono-react-router-adapter/vite";
 
 export default defineConfig(({ isSsrBuild, mode }) => ({
   build: {

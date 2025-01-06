@@ -5,34 +5,40 @@
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
-    "start": "wrangler dev",
+    "start": "react-router build && wrangler dev",
     "typecheck": "react-router typegen && tsc --build --noEmit",
     "deploy": "next-exec -c deploy -- wrangler deploy"
   },
   "dependencies": {
-    "@react-router/fs-routes": "^7.0.2",
-    "hono": "^4.6.13",
-    "isbot": "^5.1.17",
+    "@react-router/fs-routes": "^7.1.1",
+    "hono": "^4.6.16",
+    "isbot": "^5.1.19",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-router": "^7.0.2",
-    "remix-provider": "^0.0.2"
+    "react-router": "^7.1.1",
+    "remix-provider": "^1.0.1"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20241205.0",
-    "@hono/vite-dev-server": "^0.17.0",
-    "@react-router/dev": "^7.0.2",
-    "@types/node": "^22.10.1",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
+    "@cloudflare/workers-types": "^4.20241230.0",
+    "@hono/vite-dev-server": "0.18.0",
+    "@react-router/dev": "7.1.1",
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
     "autoprefixer": "^10.4.20",
-    "hono-remix-adapter": "^0.5.4",
+    "hono-react-router-adapter": "0.6.0",
     "next-exec": "^1.0.0",
     "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.16",
+    "react-router-hono-server": "2.6.3",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2",
-    "vite": "^6.0.3",
-    "vite-tsconfig-paths": "^5.1.3",
-    "wrangler": "^3.92.0"
-  }
+    "vite": "^6.0.7",
+    "vite-tsconfig-paths": "^5.1.4",
+    "wrangler": "^3.99.0"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/SoraKumo001/react-router7-hono",
+  "author": "SoraKumo <info@croud.jp>",
+  "license": "MIT"
 }

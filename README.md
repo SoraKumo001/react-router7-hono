@@ -12,6 +12,8 @@ assets = { directory = "./build/client/" }
 
 [vars]
 TEST="Cloudflare Test"
+REACT_ROUTER_PUBLIC_TEST1 = "React Router Public Test1"
+REACT_ROUTER_PUBLIC_TEST2 = "React Router Public Test2"
 
 [observability]
 enabled = true
@@ -26,15 +28,14 @@ import tailwindcss from "tailwindcss";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import adapter from "@hono/vite-dev-server/cloudflare";
-import serverAdapter from "hono-remix-adapter/vite";
+import serverAdapter from "hono-react-router-adapter/vite";
 
-export default defineConfig(({ isSsrBuild }) => ({
+export default defineConfig(({ isSsrBuild, mode }) => ({
   build: {
-    rollupOptions: isSsrBuild
-      ? {
-          input: "./workers/app.ts",
-        }
-      : undefined,
+    rollupOptions: {
+      external: [],
+      input: isSsrBuild ? "./workers/app.ts" : undefined,
+    },
   },
   css: {
     postcss: {
@@ -42,6 +43,7 @@ export default defineConfig(({ isSsrBuild }) => ({
     },
   },
   ssr: {
+    noExternal: mode === "production" ? true : undefined,
     resolve: {
       conditions: ["workerd", "worker", "browser"],
       externalConditions: ["workerd", "worker"],
@@ -78,13 +80,12 @@ import { contextStorage, getContext } from "hono/context-storage";
 import { createRequestHandler } from "react-router";
 
 const app = new Hono();
-
 app.use(contextStorage());
 
 app.use(async (_c, next) => {
-  if (!Object.getOwnPropertyDescriptor(process, "env")?.get) {
-    const processEnv = process.env;
-    Object.defineProperty(process, "env", {
+  if (!Object.getOwnPropertyDescriptor(globalThis.process, "env")?.get) {
+    const processEnv = globalThis.process.env;
+    Object.defineProperty(globalThis.process, "env", {
       get() {
         try {
           return { ...processEnv, ...getContext().env };
@@ -112,16 +113,26 @@ export default app;
 
 ```tsx
 import { useLoaderData } from "react-router";
+import { useRootContext } from "remix-provider";
 
 export default function Index() {
-  const value = useLoaderData<string>();
-  return <pre>{value}</pre>;
+  const server = useLoaderData<string>();
+  const client = useRootContext();
+  return (
+    <div>
+      <div>Client:</div>
+      <pre>{JSON.stringify(client, null, 2)}</pre>
+      <hr />
+      <div>Server:</div>
+      <pre>{server}</pre>
+    </div>
+  );
 }
 
 // At the point of module execution, process.env is available.
 
 export const loader = () => {
-  const value = JSON.stringify(process.env.TEST, null, 2);
+  const value = JSON.stringify(process.env, null, 2);
   return value;
 };
 ```
