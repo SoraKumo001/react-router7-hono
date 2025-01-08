@@ -9,7 +9,7 @@ import serverAdapter from "hono-react-router-adapter/vite";
 export default defineConfig(({ isSsrBuild }) => ({
   build: {
     rollupOptions: {
-      external: [],
+      external: ["cloudflare:workers"],
       input: isSsrBuild ? "./workers/app.ts" : undefined,
     },
   },

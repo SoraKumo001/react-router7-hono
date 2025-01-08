@@ -1,8 +1,8 @@
 workers_dev = true
-name = "react-router-hono"
+name = "react-router-hono2"
 compatibility_date = "2024-11-18"
 compatibility_flags = ["nodejs_compat"]
-main = "./build/server/index.js"
+main = "./durable.js"
 assets = { directory = "./build/client/" }
 
 [vars]
@@ -12,3 +12,11 @@ REACT_ROUTER_PUBLIC_TEST2 = "React Router Public Test2"
 
 [observability]
 enabled = true
+
+[[durable_objects.bindings]]
+name = "DURABLE_OBJECT"
+class_name = "DurableObject"
+
+[[migrations]]
+tag = "v1" 
+new_classes = ["DurableObject"] 

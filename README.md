@@ -1,6 +1,6 @@
 # react-router-hono
 
-https://react-router-hono.mofon001.workers.dev/
+https://react-router-hono2.mofon001.workers.dev/
 
 ## wrangler.toml
 

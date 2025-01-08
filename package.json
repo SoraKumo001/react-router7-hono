@@ -5,7 +5,7 @@
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
-    "start": "react-router build && wrangler dev",
+    "start": "wrangler dev",
     "typecheck": "react-router typegen && tsc --build --noEmit",
     "deploy": "next-exec -c deploy -- wrangler deploy"
   },
