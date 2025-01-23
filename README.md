@@ -26,22 +26,23 @@ enabled = true
 ```ts
 import { reactRouter } from "@react-router/dev/vite";
 import autoprefixer from "autoprefixer";
-import tailwindcss from "tailwindcss";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import adapter from "@hono/vite-dev-server/cloudflare";
 import serverAdapter from "hono-react-router-adapter/vite";
 
+const entry = "./workers/app.ts";
+
 export default defineConfig(({ isSsrBuild }) => ({
   build: {
     rollupOptions: {
-      external: [],
-      input: isSsrBuild ? "./workers/app.ts" : undefined,
+      input: isSsrBuild ? entry : undefined,
     },
   },
   css: {
     postcss: {
-      plugins: [tailwindcss, autoprefixer],
+      plugins: [autoprefixer],
     },
   },
   ssr: {
@@ -55,9 +56,10 @@ export default defineConfig(({ isSsrBuild }) => ({
   },
   plugins: [
     reactRouter(),
+    tailwindcss(),
     serverAdapter({
       adapter,
-      entry: "./workers/app.ts",
+      entry,
     }),
     tsconfigPaths(),
   ],
