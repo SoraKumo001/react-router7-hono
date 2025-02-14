@@ -1,0 +1,4 @@
+@reference "tailwindcss";
+.test {
+  @apply text-4xl;
+}

@@ -1,5 +1,4 @@
 import { reactRouter } from "@react-router/dev/vite";
-import autoprefixer from "autoprefixer";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
@@ -15,9 +14,7 @@ export default defineConfig(({ isSsrBuild }) => ({
     },
   },
   css: {
-    postcss: {
-      plugins: [autoprefixer],
-    },
+    transformer: "lightningcss",
   },
   ssr: {
     resolve: {
@@ -29,8 +26,8 @@ export default defineConfig(({ isSsrBuild }) => ({
     mainFields: ["browser", "module", "main"],
   },
   plugins: [
-    reactRouter(),
     tailwindcss(),
+    reactRouter(),
     serverAdapter({
       adapter,
       entry,

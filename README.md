@@ -1,4 +1,4 @@
-# react-router-hono
+# react-router7-hono
 
 https://react-router-hono.mofon001.workers.dev/
 
@@ -25,7 +25,6 @@ enabled = true
 
 ```ts
 import { reactRouter } from "@react-router/dev/vite";
-import autoprefixer from "autoprefixer";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
@@ -41,9 +40,8 @@ export default defineConfig(({ isSsrBuild }) => ({
     },
   },
   css: {
-    postcss: {
-      plugins: [autoprefixer],
-    },
+    // When using *.module.css with tailwindcss
+    transformer: "lightningcss",
   },
   ssr: {
     resolve: {
@@ -55,8 +53,8 @@ export default defineConfig(({ isSsrBuild }) => ({
     mainFields: ["browser", "module", "main"],
   },
   plugins: [
-    reactRouter(),
     tailwindcss(),
+    reactRouter(),
     serverAdapter({
       adapter,
       entry,
